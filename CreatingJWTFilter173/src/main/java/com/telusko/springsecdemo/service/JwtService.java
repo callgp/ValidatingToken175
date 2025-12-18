@@ -71,7 +71,7 @@ private String secretKey;
     private Claims extractAllClaims(String token){
         return Jwts.parserBuilder()
                 .setSigningKey(getKey())
-                .build().parseClaimsJwt(token).getBody();
+                .build().parseClaimsJws(token).getBody();
     }
 
     public boolean validateToken(String token, UserDetails userDetails){
